@@ -1,3 +1,5 @@
+const { generateMarkdown } = require('./utils/generate-Markdown.js');
+const inquirer = require("inquirer");
 // array of questions for user
 const questions = [
 
