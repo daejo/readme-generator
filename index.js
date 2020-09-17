@@ -1,8 +1,9 @@
-const { generateMarkdown } = require('./utils/generate-Markdown.js');
+// const { generateMarkdown } = require('./utils/generate-Markdown.js');
 const inquirer = require("inquirer");
 
 // array of questions for user
 const questions = () => {
+    
     return inquirer.prompt([
         {
          type: 'input',
@@ -44,6 +45,7 @@ const questions = () => {
        }
      ]);
 };
+
 
 // function to write README file
 function writeToFile(fileName, data) {
