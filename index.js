@@ -46,15 +46,16 @@ const questions = () => {
      ]);
 };
 
+questions();
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
+// // function to write README file
+// function writeToFile(fileName, data) {
+// }
 
-// function to initialize program
-function init() {
+// // function to initialize program
+// function init() {
 
-}
+// }
 
-// function call to initialize program
-init();
+// // function call to initialize program
+// init();
