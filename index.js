@@ -10,9 +10,9 @@ const questions = () => {
          name: "title", //declaring call label for specific answer.
          message: "What is the title of your project? (Required)", //question to be displayed.
          validate: titleInput => { //checking if response is acceptable.
-           if (titleInput) {
-             return true;
-           } else {
+           if (titleInput) { //if true proceed.
+             return true; 
+           } else { //if false, message is displayed and until valid response is entered.
              console.log("Please enter a project title!"); //displayes when response is unacceptable.
              return false;
            }
@@ -32,17 +32,51 @@ const questions = () => {
          }
        },
        {
-           type: "confirm", //declaring what type of answer. in this just a confirmation response is required.
-           name: "confirmToC", //declaring call label for table of contents response.
-           message: 'Does your ReadMe need a "Table of Contents"?',
-           default: true //proceeds with true value.
-       },
-       {
-           type: "input",
-           name: "toc",
-           message: "Please add your table of contents with proper markdown.",
-           when: ({ confirmAbout }) => confirmAbout
-       }
+            type: "input",
+            name: "install",
+            message: "Add the steps of installation for your project. (Required)",
+            validate: installInput => {
+            if (installInput) {
+                return true;
+            } else {
+                console.log("Please provide an installation guide!");
+                return false;
+            }
+            }
+        },
+        {
+            type: "input",
+            name: "usage",
+            message: "Add instructions and examples of use of your project. (Required)",
+            validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log("Please provide instructions of usage!");
+                return false;
+            }
+            }
+        },
+        {
+            type: "checkbox",
+            name: "license",
+            message: "Please choose the license/s that applies. (Check all that apply)",
+            choices: ["MIT License", "GNU AGPLv3", "GNU GPLv3", "GNU LGPLv3", "Mozilla Public License 2.0", "Apache License 2.0", "Boost Software License 1.0", "The Unlicense"]
+        },
+        {
+            type: "input",
+            name: "contribute",
+            message: "Set the guidelines on how other developers can contribute. (Required)",
+            validate: contributeInput => {
+            if (contributeInput) {
+                return true;
+            } else {
+                console.log("Please provide instructions of usage!");
+                return false;
+            }
+            }
+        },
+       
      ]);
 };
 
