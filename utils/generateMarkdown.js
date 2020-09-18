@@ -1,6 +1,6 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.title} [!Top Language](https://img.shields.io/github/languages/top/${data.github}/${data.title})
 
           ## Description 
 
@@ -49,7 +49,7 @@ function generateMarkdown(data) {
 
 
           ---
-
+          
           ## Questions
 
           ${data.github}
