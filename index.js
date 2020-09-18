@@ -1,6 +1,7 @@
 // const { generateMarkdown } = require('./utils/generate-Markdown.js');
 const inquirer = require("inquirer"); //declaring inquirer is needed for app to work.
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 /* QUESTIONS ARRAY */
 const questions = () => {
@@ -138,12 +139,10 @@ const questions = () => {
      ]);
 };
 
-questions();
-
 // function to write README file
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/index.html', fileContent, err => {
+        fs.writeFile("./dist/ReadMe.md", fileContent, err => {
           // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
           if (err) {
             reject(err);
@@ -163,7 +162,8 @@ function writeToFile(fileName, data) {
 
 // // function to initialize program
 // function init() {
-
+// generateMarkdown();    
+questions();
 // }
 
 // // function call to initialize program
