@@ -6,7 +6,7 @@ const questions = () => {
     /*PROMPTS QUESTION SEQUENCE*/
     return inquirer.prompt([
         {
-         type: "input", //declaring what type of answer.
+         type: "input", //declaring what type of answer. in this case an input response is required.
          name: "title", //declaring call label for specific answer.
          message: "What is the title of your project? (Required)", //question to be displayed.
          validate: titleInput => { //checking if response is acceptable.
@@ -19,28 +19,28 @@ const questions = () => {
          }
        },
        {
-         type: 'input',
-         name: 'github',
-         message: 'Enter your GitHub Username (Required)',
-         validate: gitUserInput => {
-           if (gitUserInput) {
+         type: "input",
+         name: "description",
+         message: "Add a description of your project. (Required)",
+         validate: descInput => {
+           if (descInput) {
              return true;
            } else {
-             console.log('Please enter your github username!');
+             console.log("Please describe your project details!");
              return false;
            }
          }
        },
        {
-           type: 'confirm',
-           name: 'confirmAbout',
-           message: 'Would you like to enter some information about yourself for an "About" section?',
-           default: true
+           type: "confirm", //declaring what type of answer. in this just a confirmation response is required.
+           name: "confirmToC", //declaring call label for table of contents response.
+           message: 'Does your ReadMe need a "Table of Contents"?',
+           default: true //proceeds with true value.
        },
        {
-           type: 'input',
-           name: 'about',
-           message: 'Provide some information about yourself:',
+           type: "input",
+           name: "toc",
+           message: "Please add your table of contents with proper markdown.",
            when: ({ confirmAbout }) => confirmAbout
        }
      ]);
