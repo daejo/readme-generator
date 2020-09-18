@@ -1,19 +1,19 @@
 // const { generateMarkdown } = require('./utils/generate-Markdown.js');
-const inquirer = require("inquirer");
+const inquirer = require("inquirer"); //declaring inquirer is needed for app to work.
 
-// array of questions for user
+/* QUESTIONS ARRAY */
 const questions = () => {
-    
+    /*PROMPTS QUESTION SEQUENCE*/
     return inquirer.prompt([
         {
-         type: 'input',
-         name: 'name',
-         message: 'What is your name? (Required)',
-         validate: nameInput => {
-           if (nameInput) {
+         type: "input", //declaring what type of answer.
+         name: "title", //declaring call label for specific answer.
+         message: "What is the title of your project? (Required)", //question to be displayed.
+         validate: titleInput => { //checking if response is acceptable.
+           if (titleInput) {
              return true;
            } else {
-             console.log('Please enter your name!');
+             console.log("Please enter a project title!"); //displayes when response is unacceptable.
              return false;
            }
          }
