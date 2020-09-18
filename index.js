@@ -71,11 +71,63 @@ const questions = () => {
             if (contributeInput) {
                 return true;
             } else {
-                console.log("Please provide instructions of usage!");
+                console.log("Please provide instructions for contributing!");
                 return false;
             }
             }
         },
+        {
+            type: "input",
+            name: "tests",
+            message: "Document of tests and provide an example how to run them. (Required)",
+            validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log("Please document tests!");
+                return false;
+            }
+            }
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "Enter your Github profile link. (Required)",
+            validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log("Please enter your github profile link!");
+                return false;
+            }
+            }
+        },
+        {
+            type: "input",
+            name: "user",
+            message: "Enter your Github username. (Required)",
+            validate: userInput => {
+            if (userInput) {
+                return true;
+            } else {
+                console.log("Please enter your github username!");
+                return false;
+            }
+            }
+        },
+        {
+            type: "input",
+            name: "profile",
+            message: "Enter your Github profile link. (Required)",
+            validate: profileInput => {
+            if (profileInput) {
+                return true;
+            } else {
+                console.log("Please enter your github profile link!");
+                return false;
+            }
+            }
+        }
        
      ]);
 };
