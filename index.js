@@ -3,6 +3,11 @@ const inquirer = require("inquirer"); //declaring inquirer is needed for app to 
 
 /* QUESTIONS ARRAY */
 const questions = () => {
+    console.log(`
+  ===================
+  Create a New ReadMe
+  ===================
+  `);
     /*PROMPTS QUESTION SEQUENCE*/
     return inquirer.prompt([
         {
