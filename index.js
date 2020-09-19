@@ -1,12 +1,11 @@
 const inquirer = require("inquirer"); //declaring inquirer is needed for app to work.
-const fs = require("fs"); //declaring fs is needed for app to work.
-const { generateMarkdown } = require("./utils/generateMarkdown"); //declaring generateMarkdown function from utils folder is needed for app to work.
+const { generateMarkdown, writeToFile } = require("./utils/generateMarkdown.js"); //declaring generateMarkdown function from utils folder is needed for app to work.
 
 /* QUESTIONS ARRAY */
 const questions = readMeData => {
     // If there's no 'projects' array property, create one
-    if (!readMeData.info) {
-        readMeData.info = [];
+    if (!readMeData) {
+        readMeData = [];
     }
     console.log(`
   ===================
@@ -142,46 +141,17 @@ const questions = readMeData => {
     ]);
 };
 
-/* WRITE README FILE FUNCTION */
-const writeToFile = readMeContent => {
-    return new Promise((resolve, reject) => {
-        fs.writeFile("./dist/ReadMe.md", readMeContent, err => {
-          // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
-          if (err) {
-            reject(err);
-            // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-            return;
-          }
-    
-          // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-          resolve({
-            ok: true,
-            message: 'File created!'
-          });
-        });
-    });
-
-}
-
-// // function to initialize program
-// function init() {
-// generateMarkdown();    
-questions();
-// }
-
+// INITIALIZES THE PROGRAM
 questions()
 .then(readMeData => {
     return generateMarkdown(readMeData);
 })
-.then(readMeContent => {
-    return writeToFile(readMeContent);
+.then(readMeData => {
+    return writeToFile(readMeData);
 })
-.then(writeFileResponse => {
-    console.log(writeFileResponse);
+.then(writeToFileResponse => {
+    console.log(writeToFileResponse);
 })
     .catch(err => {
     console.log(err);
 });
-
-// // function call to initialize program
-// init();
