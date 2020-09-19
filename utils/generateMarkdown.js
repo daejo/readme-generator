@@ -83,7 +83,7 @@ function generateMarkdown(data) {
   ## Questions
   Contact me through:
   * [My github repository](${data.github})
-  * [@daejo](${data.github})
+  * [${data.user}](${data.github})
 `;
 }
 
