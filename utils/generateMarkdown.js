@@ -2,6 +2,7 @@ const fs = require("fs"); //declaring fs is needed for app to work.
 
 /* WRITE README FILE FUNCTION */
 const writeToFile = readMeContent => {
+  console.log(readMeContent)
   return new Promise((resolve, reject) => {
       fs.writeFile("./dist/ReadMe.md", readMeContent, err => {
         // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
@@ -24,67 +25,65 @@ const writeToFile = readMeContent => {
 // function to generate markdown for README
 const generateMarkdown = 
 function generateMarkdown(data) {
+  console.log(data)
   if (!data) {
     return '';
   }
 
   return `# ${data.title}
-  ![Top Language](https://img.shields.io/github/languages/top/${data.github}/${data.title})
-  ![GitHub language count](https://img.shields.io/github/languages/count/${data.github}/${data.title})
+  ![Top Language](https://img.shields.io/github/languages/top/${data.user}/${data.title})
+  ![GitHub language count](https://img.shields.io/github/languages/count/${data.user}/${data.title})
 
-          ## Description 
+  ## Description 
 
-          ${data.description}
+  ${data.description}
+ 
+  ## Table of Contents
 
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## Installation
 
-          ## Table of Contents
-          
-          * [Installation](#installation)
-          * [Usage](#usage)
-          * [Credits](#credits)
-          * [License](#license)
-          * [Contributing](#contributing)
-          * [Tests](#tests)
-          * [Questions](#questions)
-
-
-          ## Installation
-
-          ${data.install}
+  ${data.install}
 
 
-          ## Usage 
+  ## Usage 
 
-          ${data.usage} 
-
-
-          ## Credits
-
-          ${data.credits}
+  ${data.usage} 
 
 
-          ## License
+  ## Credits
 
-          ${data.license}
-
-
-          ## Contributing
-
-          ${data.contribute}
+  ${data.credits}
 
 
-          ## Tests
+  ## License
 
-          ${data.tests}
+  ${data.license}
 
 
-          ---
-          
-          ## Questions
+  ## Contributing
 
-          ${data.github}
-          [${data.user}] (${data.github})
-          ${data.profile}
+  ${data.contribute}
+
+
+  ## Tests
+
+  ${data.tests}
+
+
+  ---
+
+  ## Questions
+  Contact me through:
+  * [My github repository](${data.github})
+  * [@daejo](${data.github})
 `;
 }
 

@@ -26,7 +26,7 @@ const questions = readMeData => {
              return false;
            }
          }
-       },
+       },       
        {
          type: "input",
          name: "description",
@@ -123,21 +123,7 @@ const questions = readMeData => {
                 return false;
             }
             }
-        },
-        {
-            type: "input",
-            name: "profile",
-            message: "Enter your Github profile link. (Required)",
-            validate: profileInput => {
-            if (profileInput) {
-                return true;
-            } else {
-                console.log("Please enter your github profile link!");
-                return false;
-            }
-            }
-        }
-       
+        }       
     ]);
 };
 
