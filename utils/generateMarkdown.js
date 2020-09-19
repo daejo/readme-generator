@@ -1,6 +1,12 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} [!Top Language](https://img.shields.io/github/languages/top/${data.github}/${data.title})
+  if (!data) {
+    return '';
+  }
+
+  return `# ${data.title}
+  ![Top Language](https://img.shields.io/github/languages/top/${data.github}/${data.title})
+  ![GitHub language count](https://img.shields.io/github/languages/count/${data.github}/${data.title})
 
           ## Description 
 
@@ -53,7 +59,7 @@ function generateMarkdown(data) {
           ## Questions
 
           ${data.github}
-          ${data.user}
+          [${data.user}] (${data.github})
           ${data.profile}
 `;
 }

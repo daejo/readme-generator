@@ -1,10 +1,13 @@
-// const { generateMarkdown } = require('./utils/generate-Markdown.js');
 const inquirer = require("inquirer"); //declaring inquirer is needed for app to work.
-const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const fs = require("fs"); //declaring fs is needed for app to work.
+const { generateMarkdown } = require("./utils/generateMarkdown"); //declaring generateMarkdown function from utils folder is needed for app to work.
 
 /* QUESTIONS ARRAY */
-const questions = () => {
+const questions = readMeData => {
+    // If there's no 'projects' array property, create one
+    if (!readMeData.info) {
+        readMeData.info = [];
+    }
     console.log(`
   ===================
   Create a New ReadMe
@@ -136,13 +139,13 @@ const questions = () => {
             }
         }
        
-     ]);
+    ]);
 };
 
-// function to write README file
-function writeToFile(fileName, data) {
+/* WRITE README FILE FUNCTION */
+const writeToFile = readMeContent => {
     return new Promise((resolve, reject) => {
-        fs.writeFile("./dist/ReadMe.md", fileContent, err => {
+        fs.writeFile("./dist/ReadMe.md", readMeContent, err => {
           // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
           if (err) {
             reject(err);
@@ -165,6 +168,20 @@ function writeToFile(fileName, data) {
 // generateMarkdown();    
 questions();
 // }
+
+questions()
+.then(readMeData => {
+    return generateMarkdown(readMeData);
+})
+.then(readMeContent => {
+    return writeToFile(readMeContent);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse);
+})
+    .catch(err => {
+    console.log(err);
+});
 
 // // function call to initialize program
 // init();
