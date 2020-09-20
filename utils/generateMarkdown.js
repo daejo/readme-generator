@@ -4,7 +4,8 @@ const generateMarkdown = (data) => {
     return '';
   }
   let gitLink = data.title;
-  let newTitle = gitLink.replace(" ", "-");
+  let newTitle = (gitLink).replace(" ", "-");
+
   return `# ${data.title}
   ![Top Language](https://img.shields.io/github/languages/top/${data.user}/${newTitle})
   ![GitHub Language count](https://img.shields.io/github/languages/count/${data.user}/${newTitle})
@@ -12,7 +13,7 @@ const generateMarkdown = (data) => {
 
   ## Description 
 
-  ${data.description}
+  _${data.description}_
  
   ## Table of Contents
 
@@ -34,6 +35,11 @@ const generateMarkdown = (data) => {
   _${data.usage}_ 
 
 
+  ## Credits
+
+  _${data.credits}_
+
+
   ## Contributing
 
   _${data.contribute}_
@@ -45,9 +51,10 @@ const generateMarkdown = (data) => {
 
   ---
   ## Questions?
-  _Contact me:_  
+  _Contact me:_
+  _[@${data.user}](github.com/${data.user})_  
   _[${data.github}](${data.github})_  
-  _[@${data.user}](${data.github})_
+  
 `;
 }
 

@@ -53,7 +53,13 @@ const questions = readMeData => {
              return false;
            }
          }
-       },       
+       },
+       {
+            type: "checkbox",
+            name: "license",
+            message: "Please choose the license/s that applies. (Please choose one)",
+            choices: ["MIT_License", "GNU_AGPL_v3", "GNU_GPL_v3", "GNU_LGPL_v3", "Mozilla_Public_License_2.0", "Apache_License_2.0", "Boost_Software_License_1.0", "The_Unlicense"]
+        },       
        {
          type: "input",
          name: "description",
@@ -94,10 +100,17 @@ const questions = readMeData => {
             }
         },
         {
-            type: "checkbox",
-            name: "license",
-            message: "Please choose the license/s that applies. (Please choose one)",
-            choices: ["MIT_License", "GNU_AGPL_v3", "GNU_GPL_v3", "GNU_LGPL_v3", "Mozilla_Public_License_2.0", "Apache_License_2.0", "Boost_Software_License_1.0", "The_Unlicense"]
+            type: "input",
+            name: "credits",
+            message: "Add whom to credit. (Required)",
+            validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log("Please provide credits!");
+                return false;
+            }
+            }
         },
         {
             type: "input",

@@ -1,11 +1,11 @@
-# password generator
-  ![Top Language](https://img.shields.io/github/languages/top/daejo/password-generator)
-  ![GitHub Language count](https://img.shields.io/github/languages/count/daejo/password-generator)
-  ![License](https://img.shields.io/badge/license-GNU_AGPL_v3-green.svg)
+# Password Generator
+  ![Top Language](https://img.shields.io/github/languages/top/daejo/Password-Generator)
+  ![GitHub Language count](https://img.shields.io/github/languages/count/daejo/Password-Generator)
+  ![License](https://img.shields.io/badge/license-MIT_License-green.svg)
 
   ## Description 
 
-  A website that produces a unique one of a kind password. Specify the length of your desired password, choose which ever types of characters you want to include.
+  _A website that produces a unique one of a kind password. Specify the length of your desired password, choose which ever types of characters you want to include._
  
   ## Table of Contents
 
@@ -19,25 +19,31 @@
 
   ## Installation
 
-  _Plug and play_
+  _Just open website and use the app (Plug and Play)_
 
 
   ## Usage 
 
-  _Generate secure unique password_ 
+  _Creation of secure new password_ 
+
+
+  ## Credits
+
+  _@daejo_
 
 
   ## Contributing
 
-  _like this_
+  _Clone and upload (Open to edits)_
 
 
   ## Tests
 
-  _like that_
+  _Tests went great_
 
   ---
   ## Questions?
-  _Contact me:_  
+  _Contact me:_
+  _[@daejo](github.com/daejo)_  
   _[https://github.com/daejo/password-generator](https://github.com/daejo/password-generator)_  
-  _[@daejo](https://github.com/daejo/password-generator)_
+  
