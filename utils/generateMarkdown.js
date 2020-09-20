@@ -1,13 +1,13 @@
 // function to generate markdown for README
-const generateMarkdown = 
-function generateMarkdown(data) {
+const generateMarkdown = (data) => {
   if (!data) {
     return '';
   }
-
+  let gitLink = data.title;
+  let newTitle = gitLink.replace(" ", "-");
   return `# ${data.title}
-  ![Top Language](https://img.shields.io/github/languages/top/${data.user}/${data.title})
-  ![GitHub Language count](https://img.shields.io/github/languages/count/${data.user}/${data.title})
+  ![Top Language](https://img.shields.io/github/languages/top/${data.user}/${newTitle})
+  ![GitHub Language count](https://img.shields.io/github/languages/count/${data.user}/${newTitle})
   ![License](https://img.shields.io/badge/license-${data.license}-green.svg)
 
   ## Description 
@@ -19,41 +19,35 @@ function generateMarkdown(data) {
   * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
-  * [License](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
   
+
   ## Installation
 
-  ${data.install}
+  _${data.install}_
+
 
   ## Usage 
 
-  ${data.usage} 
-
-
-  ## Credits
-
-  ${data.credits}
+  _${data.usage}_ 
 
 
   ## Contributing
 
-  ${data.contribute}
+  _${data.contribute}_
 
 
   ## Tests
 
-  ${data.tests}
-
+  _${data.tests}_
 
   ---
-
-  ## Questions
-  Contact me through:  
-  [${data.github}](${data.github})  
-  [@${data.user}](${data.github})
+  ## Questions?
+  _Contact me:_  
+  _[${data.github}](${data.github})_  
+  _[@${data.user}](${data.github})_
 `;
 }
 

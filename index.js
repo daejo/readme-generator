@@ -16,6 +16,32 @@ const questions = readMeData => {
     /*PROMPTS QUESTION SEQUENCE*/
     return inquirer.prompt([
         {
+            type: "input",
+            name: "user",
+            message: "Enter your Github username. (Required)",
+            validate: userInput => {
+            if (userInput) {
+                return true;
+            } else {
+                console.log("Please enter your github username!");
+                return false;
+            }
+            }
+        }, 
+        {
+            type: "input",
+            name: "github",
+            message: "Enter your Github project link. (Required)",
+            validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log("Please enter your project link!");
+                return false;
+            }
+            }
+        },    
+        {
          type: "input", //declaring what type of answer. in this case an input response is required.
          name: "title", //declaring call label for specific answer.
          message: "What is the title of your project? (Required)", //question to be displayed.
@@ -71,7 +97,7 @@ const questions = readMeData => {
             type: "checkbox",
             name: "license",
             message: "Please choose the license/s that applies. (Please choose one)",
-            choices: ["MIT", "GNU_AGPLv3", "GNU_GPLv3", "GNU_LGPLv3", "Mozilla_Public2.0", "Apache2.0", "Boost_Software1.0", "Unlicense"]
+            choices: ["MIT_License", "GNU_AGPL_v3", "GNU_GPL_v3", "GNU_LGPL_v3", "Mozilla_Public_License_2.0", "Apache_License_2.0", "Boost_Software_License_1.0", "The_Unlicense"]
         },
         {
             type: "input",
@@ -98,39 +124,12 @@ const questions = readMeData => {
                 return false;
             }
             }
-        },
-        {
-            type: "input",
-            name: "github",
-            message: "Enter your Github profile link. (Required)",
-            validate: githubInput => {
-            if (githubInput) {
-                return true;
-            } else {
-                console.log("Please enter your github profile link!");
-                return false;
-            }
-            }
-        },
-        {
-            type: "input",
-            name: "user",
-            message: "Enter your Github username. (Required)",
-            validate: userInput => {
-            if (userInput) {
-                return true;
-            } else {
-                console.log("Please enter your github username!");
-                return false;
-            }
-            }
-        }       
+        }  
     ]);
 };
 
 /* WRITE README FILE FUNCTION */
 const writeToFile = readMeContent => {
-    console.log(readMeContent)
     return new Promise((resolve, reject) => {
         fs.writeFile("./dist/ReadMe.md", readMeContent, err => {
           // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
