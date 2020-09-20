@@ -25,14 +25,14 @@ const writeToFile = readMeContent => {
 // function to generate markdown for README
 const generateMarkdown = 
 function generateMarkdown(data) {
-  console.log(data)
   if (!data) {
     return '';
   }
 
   return `# ${data.title}
   ![Top Language](https://img.shields.io/github/languages/top/${data.user}/${data.title})
-  ![GitHub language count](https://img.shields.io/github/languages/count/${data.user}/${data.title})
+  ![GitHub Language count](https://img.shields.io/github/languages/count/${data.user}/${data.title})
+  ![License](https://img.shields.io/badge/license-${data.license}-green.svg)
 
   ## Description 
 
@@ -63,11 +63,6 @@ function generateMarkdown(data) {
   ${data.credits}
 
 
-  ## License
-
-  ${data.license}
-
-
   ## Contributing
 
   ${data.contribute}
@@ -81,9 +76,9 @@ function generateMarkdown(data) {
   ---
 
   ## Questions
-  Contact me through:
-  * [My github repository](${data.github})
-  * [${data.user}](${data.github})
+  Contact me through:  
+  [${data.github}](${data.github})  
+  [@${data.user}](${data.github})
 `;
 }
 

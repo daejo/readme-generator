@@ -1,10 +1,11 @@
-# asdasdad
-  ![Top Language](https://img.shields.io/github/languages/top/asdasd/asdasdad)
-  ![GitHub language count](https://img.shields.io/github/languages/count/asdasd/asdasdad)
+# dasddsa
+  ![Top Language](https://img.shields.io/github/languages/top/adad/dasddsa)
+  ![GitHub Language count](https://img.shields.io/github/languages/count/adad/dasddsa)
+  [![License](https://img.shields.io/badge/license-GNU GPLv3-green.svg)]
 
   ## Description 
 
-  asdasdasd
+  asdadsd
  
   ## Table of Contents
 
@@ -15,14 +16,15 @@
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
+  
   ## Installation
 
-  asdadsa
+  asdad
 
 
   ## Usage 
 
-  asfaf 
+  asdadsa 
 
 
   ## Credits
@@ -30,24 +32,19 @@
   undefined
 
 
-  ## License
-
-  MIT License,GNU AGPLv3,GNU GPLv3,GNU LGPLv3,Mozilla Public License 2.0,Apache License 2.0,Boost Software License 1.0,The Unlicense
-
-
   ## Contributing
 
-  asdasd
+  sdadasd
 
 
   ## Tests
 
-  sdasd
+  asdadasd
 
 
   ---
 
   ## Questions
-  Contact me through:
-  * [My github repository](asads)
-  * [@daejo](asads)
+  Contact me through:  
+  [asdadads](asdadads)  
+  [@adad](asdadads)

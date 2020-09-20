@@ -1,5 +1,3 @@
 # Professional README Generator
 
-[How to create a Professional README](./readme-guide.md)
-
 install inquirer type "npm install inquirer" into terminal in root directory.

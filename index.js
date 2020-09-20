@@ -70,7 +70,7 @@ const questions = readMeData => {
             type: "checkbox",
             name: "license",
             message: "Please choose the license/s that applies. (Please choose one)",
-            choices: ["MIT", "GNU AGPLv3", "GNU GPLv3", "GNU LGPLv3", "Mozilla Public License 2.0", "Apache License 2.0", "Boost Software License 1.0", "The Unlicense"]
+            choices: ["MIT", "GNU.AGPLv3", "GNU.GPLv3", "GNU.LGPLv3", "Mozilla.Public2.0", "Apache2.0", "Boost.Software1.0", "Unlicense"]
         },
         {
             type: "input",
