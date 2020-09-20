@@ -1,5 +1,6 @@
 const inquirer = require("inquirer"); //declaring inquirer is needed for app to work.
-const { generateMarkdown, writeToFile } = require("./utils/generateMarkdown.js"); //declaring generateMarkdown function from utils folder is needed for app to work.
+const fs = require("fs"); //declaring fs is needed for app to work.
+const { generateMarkdown } = require("./utils/generateMarkdown.js");
 
 /* QUESTIONS ARRAY */
 const questions = readMeData => {
@@ -70,7 +71,7 @@ const questions = readMeData => {
             type: "checkbox",
             name: "license",
             message: "Please choose the license/s that applies. (Please choose one)",
-            choices: ["MIT", "GNU.AGPLv3", "GNU.GPLv3", "GNU.LGPLv3", "Mozilla.Public2.0", "Apache2.0", "Boost.Software1.0", "Unlicense"]
+            choices: ["MIT", "GNU_AGPLv3", "GNU_GPLv3", "GNU_LGPLv3", "Mozilla_Public2.0", "Apache2.0", "Boost_Software1.0", "Unlicense"]
         },
         {
             type: "input",
@@ -126,6 +127,28 @@ const questions = readMeData => {
         }       
     ]);
 };
+
+/* WRITE README FILE FUNCTION */
+const writeToFile = readMeContent => {
+    console.log(readMeContent)
+    return new Promise((resolve, reject) => {
+        fs.writeFile("./dist/ReadMe.md", readMeContent, err => {
+          // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
+          if (err) {
+            reject(err);
+            // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+            return;
+          }
+    
+          // if everything went well, resolve the Promise and send the successful data to the `.then()` method
+          resolve({
+            ok: true,
+            message: 'ReadMe created!'
+          });
+        });
+    });
+  
+  };
 
 // INITIALIZES THE PROGRAM
 questions()
