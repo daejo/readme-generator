@@ -18,9 +18,11 @@
 
   ## Installation
 
-  * _Install inquirer type "npm install inquirer" into terminal  
-    in your root directory._  
-  * _After installation type in "node index.js" into terminal to start the questioning process._
+  * _To start make sure your system has [node.js](https://nodejs.org/en/) installed._
+  * _Clone the repository from https://github.com/daejo/readme-generator._
+  * _Once repository is done cloning open terminal._
+  * _Open your root local directory where you cloned the files._    
+  * _Type in "node index.js" into terminal to start the questioning process._
 
 
   ## Usage 
@@ -32,6 +34,7 @@
   ## Credits
 
   _@daejo_
+  _https://nodejs.org/en/_
 
 
   ## Contributing
@@ -43,5 +46,5 @@
   ## Questions?
   _Contact me:_
   _[@daejo](github.com/daejo)_  
-  _[https://github.com/daejo/password-generator](https://github.com/daejo/password-generator)_  
+  _[https://github.com/daejo/readme-generator](https://github.com/daejo/readme-generator)_  
   
